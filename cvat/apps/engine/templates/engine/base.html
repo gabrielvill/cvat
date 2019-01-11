@@ -14,10 +14,11 @@
                 Computer Vision Annotation Tool (CVAT)
             {% endblock %}
         </title>
-
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
         {% compress css %}
             {% block head_css %}
                 <link rel="stylesheet" type="text/css" href="{% static 'engine/base.css' %}">
+               
             {% endblock %}
         {% endcompress %}
 
@@ -25,10 +26,17 @@
             <script type="text/javascript" src="{% static 'engine/js/3rdparty/platform.js' %}"></script>
             <script type="text/javascript" src="{% static 'engine/js/checkPlatform.js' %}"></script>
         {% endcompress %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+                <!-- Popper JS -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+                <!-- Latest compiled JavaScript -->
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
         {% compress js file thirdparty %}
             {% block head_js_3rdparty %}
                 <script type="text/javascript" src="{% static 'engine/js/3rdparty/jquery-3.3.1.js' %}"></script>
+                
                 <script type="text/javascript" src="{% static 'engine/js/3rdparty/js.cookie.js' %}"></script>
                 <script type="text/javascript" src="{% static 'engine/js/3rdparty/mousetrap.js' %}"></script>
             {% endblock %}
