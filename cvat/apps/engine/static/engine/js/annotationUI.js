@@ -8,6 +8,7 @@
 "use strict";
 
 function callAnnotationUI(jid) {
+    
     initLogger(jid);
     let loadJobEvent = Logger.addContinuedEvent(Logger.EventType.loadJob);
     serverRequest("/get/job/" + jid, function(job) {
@@ -30,7 +31,8 @@ function initLogger(jobID) {
     }
 
     Logger.setTimeThreshold(Logger.EventType.zoomImage);
-
+    layoutBysplit();
+    fullScreen();
     serverRequest('/get/username', function(response) {
         Logger.setUsername(response.username);
     });
@@ -238,8 +240,20 @@ function buildAnnotationUI(job, shapeData, loadJobEvent) {
             blurAllElements();
         }
     });
+
 }
 
+
+
+function layoutBysplit(){
+    Split(['#content_split', '#sidebar_split'], {
+        sizes:[75, 25]
+    })
+    Split(['#s_tab_objects', '#s_tab_labels', '#s_tab_history'], {
+        direction: 'vertical',
+        cursor: 'row-resize',
+    })
+}
 
 function copyToClipboard(text) {
     let tempInput = $("<input>");
@@ -743,4 +757,25 @@ function saveAnnotation(shapeCollectionModel, job) {
 
 function blurAllElements() {
     document.activeElement.blur();
+}
+
+function fullScreen(){
+    let __fullScBtn = $('#full_screen');
+    __fullScBtn.on('click', function(e){
+        e.preventDefault();
+        requestFullscreen(document.documentElement);
+    });
+    var requestFullscreen = function (ele) {
+        if (ele.requestFullscreen) {
+            ele.requestFullscreen();
+        } else if (ele.webkitRequestFullscreen) {
+            ele.webkitRequestFullscreen();
+        } else if (ele.mozRequestFullScreen) {
+            ele.mozRequestFullScreen();
+        } else if (ele.msRequestFullscreen) {
+            ele.msRequestFullscreen();
+        } else {
+            console.log('Fullscreen API is not supported.');
+        }
+    };
 }

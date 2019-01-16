@@ -101,7 +101,7 @@
 			<div class="header_item">
 				<div class="setting_tool_cont">
 					<ul class="top-toolbar shape-tool">
-						<li class="tool-item"><img src="{% static 'engine/icons/propagate.png' %}" alt="">Full screen</li>
+						<li class="tool-item" id="full_screen"><img src="{% static 'engine/icons/propagate.png' %}" alt="">Full screen</li>
 						<li class="tool-item"><img src="{% static 'engine/icons/propagate.png' %}" alt="">Settings</li>
 					</ul>
 				</div>
@@ -110,7 +110,7 @@
 	</section>
 	<section class="main">
 		<div class="d-flex">
-			<div class="content split" id="one">
+			<div class="content split" id="content_split">
 				<div id="taskAnnotationCenterPanel">
 				<div id="player">
 					<div id="playerFrame">
@@ -441,11 +441,32 @@
 				</div>
 			</div>
 			</div>
-			<div class="left-sidebar split" id="two">
+			<div class="left-sidebar split" id="sidebar_split">
 				<div class="left-sidebar-cont">
-                    <div class="left-sidebar-item" id="s_tab_objects">Objects</div>
-                    <div class="left-sidebar-item" id="s_tab_labels">Labels</div>
-					<div class="left-sidebar-item" id="s_tab_history">History</div>
+                    <div class="left-sidebar-item" id="s_tab_objects">
+                        <div class="side-widget-header">
+                            <p>Objects</p>
+                        </div>
+                        <div class="sidebar-widget-body">
+                            Wiget body
+                        </div>
+                    </div>
+                    <div class="left-sidebar-item" id="s_tab_labels">
+                        <div class="side-widget-header">
+                            <p>Labels</p>
+                        </div>
+                        <div class="sidebar-widget-body">
+                            Wiget body
+                        </div>
+                    </div>
+					<div class="left-sidebar-item" id="s_tab_history">
+                        <div class="side-widget-header">
+                            <p>Labels</p>
+                        </div>
+                        <div class="sidebar-widget-body">
+                            Wiget body
+                        </div>               
+                    </div>
 				</div>
 			</div>
 		</div>

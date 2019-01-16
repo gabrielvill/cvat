@@ -264,11 +264,6 @@ $(document).ready(function(){
     //     width: window.screen.width + 'px',
     //     height: window.screen.height * 0.95 + 'px'
     // });
-    Split(['#one', '#two'], {
-    })
-    Split(['#s_tab_objects', '#s_tab_labels', '#s_tab_history'], {
-        direction: 'vertical',
-        cursor: 'row-resize',
-    })
+    
 
 });
